@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo-box">
+            <img src="https://png.pngtree.com/png-clipart/20220604/original/pngtree-women-logo-png-image_7932162.png" class="logo-img" alt="Logo">
+            <h1 class="logo-text">Tienda Demo</h1>
+        </div>
+    
+        <div class="top-controls">
+            <input type="text" id="searchInput" placeholder="Buscar productos...">
+    
+            <button id="cartBtn" class="cart-btn">
+                🛒 <span id="cartCount">0</span>
+            </button>
+    
+            <button id="favBtn" class="cart-btn" style="background:red;">
+                ❤️ <span id="favCount">0</span>
+            </button>
+    
+            <button id="loginBtn" class="cart-btn" style="background:#ff00aa;">
+                👥
+            </button>
+        </div>
+    </header>
+    
+
+    <!-- CATEGORÍAS -->
+    <nav class="categories">
+        <button class="cat-btn active" data-cat="todo">Todo</button>
+        <button class="cat-btn" data-cat="electronica">Electrónica</button>
+        <button class="cat-btn" data-cat="hombre">Hombre </button>
+        <button class="cat-btn" data-cat="mujer">Mujer </button>
+        <button class="cat-btn" data-cat="belleza">Belleza</button>
+        <button class="cat-btn" data-cat="hogar">Hogar</button>
+        <button class="cat-btn" data-cat="libreria y papeleria">Libreria y papeleria</button>
+    </nav>
+
+    <!-- PRODUCTOS -->
+    <section id="productContainer" class="products"></section>
+
+    <!-- PANEL CARRITO -->
+    <aside id="cartPanel" class="cart-panel">
+        <h2>Tu carrito</h2>
+        <div id="cartItems"></div>
+
+        <div class="cart-footer">
+            <p class="subtotal">Subtotal: $<span id="cartTotal">0</span></p>
+            <button class="pay-btn">Pagar</button>
+        </div>
+    </aside>
+
+    <!-- PANEL FAVORITOS -->
+    <aside id="favPanel" class="cart-panel">
+        <h2>Favoritos ❤️</h2>
+        <div id="favItems"></div>
+
+        <div class="cart-footer">
+            <button class="pay-btn">Ver productos</button>
+        </div>
+    </aside>
+
+    <!-- OVERLAY -->
+    <div id="overlay" class="overlay"></div>
+
+  <!-- MODAL LOGIN / REGISTRO -->
+<div id="loginModal" class="login-modal" style="display:none;">
+    <div class="login-box">
+
+        <!-- LOGIN -->
+        <div id="loginFormContainer" class="modal-content">
+            <button id="closeLogin" class="close-btn">&times;</button>
+            <h2>Inicia sesión</h2>
+            <form id="loginForm">
+                <label for="email">Correo electrónico*</label>
+                <input type="email" id="email" required>
+
+                <label for="password">Contraseña*</label>
+                <input type="password" id="password" required>
+
+                <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+
+                <button type="submit" class="btn-login">Iniciar sesión</button>
+            </form>
+            <p>¿No tienes cuenta? <a href="#" id="createAccountLink">Crear cuenta</a></p>
+        </div>
+
+        <!-- REGISTRO -->
+        <div id="registerForm" style="display:none;">
+            <h2>Crear cuenta</h2>
+
+            <label>Correo electrónico*</label>
+            <input type="email" id="emailRegister">
+
+            <label>Contraseña*</label>
+            <input type="password" id="passwordRegister">
+
+            <button class="login-submit">Crear cuenta</button>
+
+            <p class="create-acc">
+                ¿Ya tienes cuenta? <a id="goToLogin" href="#">Inicia sesión</a>
+            </p>
+        </div>
+
+    </div>
+</div>
+
+    <!-- FOOTER -->
+    <footer>
+        Proyecto demo para clase — HTML + CSS + JS simples.
+    </footer>
+
+    <script src="app.js"></script>
+    
+</body>
+</html>
